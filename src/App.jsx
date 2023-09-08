@@ -1,11 +1,10 @@
 import React from "react";
+import Header from "./components/Header/Header.jsx";
 
 function App() {
   return (
-    <div className="bg-red-500 h-96 py-8">
-      <h1 className="text-3xl font-bold underline bg-yellow-400">
-        Hello world!
-      </h1>
+    <div>
+      <Header />
     </div>
   );
 }
