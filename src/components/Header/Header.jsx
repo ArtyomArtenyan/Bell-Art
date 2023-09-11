@@ -8,7 +8,7 @@ import LanguageSelector from "./LanguageSelector/LanguageSelector.jsx";
 const Header = () => {
   const { t } = useTranslation();
   return (
-    <nav className="bg-#fff w-[1920px] h-[120px] shrink-0 relative shadow-[3sh]">
+    <div className="bg-#fff w-[1920px] h-[120px] shrink-0 relative shadow-[3sh]">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex w-[84px] h-[84px] pt-0 px-[10px] flex-col justify-center items-center gap-[5px] text-center absolute left-[200px] top-[18px]">
           <img src={Logo} alt="Logo" className="w-16 h-16 inline" />
@@ -16,8 +16,8 @@ const Header = () => {
             {t("logo")}
           </p>
         </div>
-        <div className="Nav w-[823px] h-6 relative">
-          <ul className="inline-flex gap-20 items-start text-[20px] absolute top-12 left-[549px] ">
+        <nav className="Nav absolute w-[823px] h-6 top-12 left-[549px]">
+          <ul className="inline-flex gap-20 items-start text-[20px] font-light">
             <li>
               <NavLink
                 to="/"
@@ -51,10 +51,10 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-        </div>
-        <LanguageSelector />
+        </nav>
       </div>
-    </nav>
+      <LanguageSelector />
+    </div>
   );
 };
 
