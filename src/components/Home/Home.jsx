@@ -28,7 +28,7 @@ const Home = () => {
   };
 
   return (
-    <div className="Home">
+    <div className="Home gap-[120px] inline-flex flex-col items-center">
       {/* HeroSection */}
 
       <div className="HeroSection relative w-[1920px] h-[807px] overflow-hidden">
@@ -68,6 +68,16 @@ const Home = () => {
         </div>
       </div>
       {/* About */}
+      <div className="About text-[#202020] flex py-[120px] pl-20 pr-[99px]  flex-col justify-center items-start gap-16 shadow-custom w-[1520px] h-[723px]">
+        <div className="AboutUs w-[292px] h-[59px]">
+          <p className="text-[48px] font-normal leading-[58.51px]">
+            {t("aboutUs")}
+          </p>
+        </div>
+        <div className="AboutUsText w-[1341px] h-[360px]">
+          <p className="text-[20px] font-light leading-9">{t("aboutUsText")}</p>
+        </div>
+      </div>
     </div>
   );
 };
