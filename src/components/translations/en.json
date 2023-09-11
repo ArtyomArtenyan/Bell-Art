@@ -3,5 +3,7 @@
   "product": "Product",
   "services": "Services",
   "contact": "Contacts",
-  "logo": "Bellart"
+  "logo": "Bellart",
+  "heroSectionText": "«BelArt» LLC",
+  "heroSectionButtonText": "More"
 }

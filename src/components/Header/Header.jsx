@@ -7,7 +7,6 @@ import LanguageSelector from "./LanguageSelector/LanguageSelector.jsx";
 
 const Header = () => {
   const { t } = useTranslation();
-  console.log(t("home"));
   return (
     <nav className="bg-#fff w-[1920px] h-[120px] shrink-0 relative shadow-[3sh]">
       <div className="container mx-auto flex justify-between items-center">
@@ -18,7 +17,7 @@ const Header = () => {
           </p>
         </div>
         <div className="Nav w-[823px] h-6 relative">
-          <ul className="inline-flex gap-20 items-start text-[20px] absolute top-12 left-[549px]">
+          <ul className="inline-flex gap-20 items-start text-[20px] absolute top-12 left-[549px] ">
             <li>
               <NavLink
                 to="/"

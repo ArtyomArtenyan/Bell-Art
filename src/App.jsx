@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Header/Home/Home.jsx";
-import Product from "./components/Header/Product/Product.jsx";
-import Services from "./components/Header/Servicess/Servicess.jsx";
-import Contact from "./components/Header/Contact/Contact.jsx";
+import Home from "./components/Home/Home.jsx";
+import Product from "./components/Product/Product.jsx";
+import Services from "./components/Servicess/Servicess.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 
 import Header from "./components/Header/Header";
 

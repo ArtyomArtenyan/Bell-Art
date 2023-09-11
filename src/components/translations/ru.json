@@ -3,5 +3,7 @@
   "product": "Продукт",
   "services": "Услуги",
   "contact": "Контакты",
-  "logo": "Белларт"
+  "logo": "Белларт",
+  "heroSectionText": "ООО «БелАрт».",
+  "heroSectionButtonText": "Более"
 }

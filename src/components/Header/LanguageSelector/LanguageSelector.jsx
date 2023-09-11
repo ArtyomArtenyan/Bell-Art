@@ -13,6 +13,16 @@ const LanguageSelector = () => {
 
   return (
     <div className="flex items-center absolute top-12 left-[1656px]">
+      {" "}
+      <button
+        className={`w-6 h-6 shrink-0 ${
+          i18n.language === "arm" ? "hidden" : ""
+        }`}
+        onClick={() => handleLanguageChange("arm")}
+      >
+        {" "}
+        <img src={arm} alt="arm flag" />
+      </button>
       <button
         className={`w-6 h-6 shrink-0 ${i18n.language === "ru" ? "hidden" : ""}`}
         onClick={() => handleLanguageChange("ru")}
@@ -26,15 +36,6 @@ const LanguageSelector = () => {
       >
         {" "}
         <img src={en} alt="en flag" />
-      </button>
-      <button
-        className={`w-6 h-6 shrink-0 ${
-          i18n.language === "arm" ? "hidden" : ""
-        }`}
-        onClick={() => handleLanguageChange("arm")}
-      >
-        {" "}
-        <img src={arm} alt="arm flag" />
       </button>
     </div>
   );
