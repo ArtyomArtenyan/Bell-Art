@@ -2,8 +2,14 @@
   "home": "Home",
   "product": "Product",
   "services": "Services",
-  "contact": "Contacts",
+  "contact": "Contact",
   "logo": "Bellart",
-  "heroSectionText": "«BelArt» LLC",
-  "heroSectionButtonText": "More"
+  "heroSectionText": "BellArt Ltd.",
+  "heroSectionButtonText": "Learn More",
+  "aboutUs": "About Us",
+  "aboutUsText": "BellArt Ltd. has been involved in the field of retinotechnology production for over 30 years. Our company's product is widely used in various industries, including quality, security, construction, and more. The main goal of BellArt Ltd. is to become one of the leading retinotechnology organizations in the region, using state-of-the-art equipment and modern technologies. Years of experience and knowledge enable us to deliver high-quality and affordable solutions to any complex and large-scale production. BellArt Ltd. is committed to maintaining the quality, integrity, and precision of our products in the fields where quality, efficiency, and accuracy play a vital role.",
+  "advantagesUs": "Our Advantages",
+  "advantagesText1": "Advantage 1",
+  "advantagesText2": "Affordable Prices",
+  "advantagesText3": "Advantage 3"
 }
