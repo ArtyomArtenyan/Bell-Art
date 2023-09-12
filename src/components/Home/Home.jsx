@@ -31,7 +31,7 @@ const Home = () => {
     setCurrentSlide((prevSlide) => (prevSlide === max - 1 ? 0 : prevSlide + 1));
   };
   return (
-    <div className="Home gap-[120px] inline-flex flex-col items-center">
+    <div className="Home gap-[120px] w-[1920px] h-[2819px]  inline-flex flex-col items-center">
       {/* HeroSection */}
       <div className="HeroSection relative w-[1920px] h-[807px] overflow-hidden">
         <div
