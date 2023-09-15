@@ -10,15 +10,17 @@ import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-montserrat">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div className="App  gap-[120px] inline-flex flex-col items-center">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }
