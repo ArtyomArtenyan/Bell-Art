@@ -1,3 +1,14 @@
+/* Your Tailwind CSS */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @font-face rules for Montserrat */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./Montserratarm-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

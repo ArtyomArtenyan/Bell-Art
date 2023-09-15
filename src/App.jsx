@@ -6,17 +6,21 @@ import Services from "./components/Servicess/Servicess.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-montserrat">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="App  gap-[120px] inline-flex flex-col items-center">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }
