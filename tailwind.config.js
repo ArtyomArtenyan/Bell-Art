@@ -10,6 +10,9 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans"],
       },
+      screens: {
+        md: { max: "1520px" },
+      },
     },
   },
   plugins: [],

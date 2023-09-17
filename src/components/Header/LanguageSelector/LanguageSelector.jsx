@@ -12,31 +12,33 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="flex items-center absolute top-12 left-[1656px]">
-      {" "}
-      <button
-        className={`w-6 h-6 shrink-0 ${
-          i18n.language === "arm" ? "hidden" : ""
-        }`}
-        onClick={() => handleLanguageChange("arm")}
-      >
-        {" "}
-        <img src={arm} alt="arm flag" />
-      </button>
-      <button
-        className={`w-6 h-6 shrink-0 ${i18n.language === "ru" ? "hidden" : ""}`}
-        onClick={() => handleLanguageChange("ru")}
-      >
-        {" "}
-        <img src={ru} alt="ru flag" />
-      </button>
-      <button
-        className={`w-6 h-6 shrink-0 ${i18n.language === "en" ? "hidden" : ""}`}
-        onClick={() => handleLanguageChange("en")}
-      >
-        {" "}
-        <img src={en} alt="en flag" />
-      </button>
+    <div className="LanguageSelector absolute py-12 pl-[1656px] md:pl-[1256px]">
+      <div className="language w-16 h-6">
+        <button
+          className={`arm w-6 h-6 shrink-0 ${
+            i18n.language === "arm" ? "hidden" : ""
+          }`}
+          onClick={() => handleLanguageChange("arm")}
+        >
+          <img src={arm} alt="arm flag" />
+        </button>
+        <button
+          className={`ru w-6 h-6 shrink-0 ${
+            i18n.language === "ru" ? "hidden" : ""
+          }`}
+          onClick={() => handleLanguageChange("ru")}
+        >
+          <img src={ru} alt="ru flag" />
+        </button>
+        <button
+          className={`en w-6 h-6 shrink-0 ${
+            i18n.language === "en" ? "hidden" : ""
+          }`}
+          onClick={() => handleLanguageChange("en")}
+        >
+          <img src={en} alt="en flag" />
+        </button>
+      </div>
     </div>
   );
 };

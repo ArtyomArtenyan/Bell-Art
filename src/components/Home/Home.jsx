@@ -31,93 +31,120 @@ const Home = () => {
     setCurrentSlide((prevSlide) => (prevSlide === max - 1 ? 0 : prevSlide + 1));
   };
   return (
-    <div className="Home  w-[1920px] gap-[120px] inline-flex flex-col items-center">
+    <div className="Home  w-[1920px] gap-[120px] inline-flex flex-col items-center md:w-[1520px]">
       {/* HeroSection */}
-      <div className="HeroSection relative w-[1920px] h-[807px] overflow-hidden">
+      <div className="HeroSection relative w-full h-[807px] overflow-hidden md:w-[1520px]">
         <div
-          className="slide-photo-container absolute duration-300 flex "
+          className="slide-photo-container absolute duration-300 flex w-[400%] md:w-[504%]"
           style={{
-            width: `${max * 100}%`,
             transform: `translateX(-${currentSlide * (100 / max)}%)`,
           }}
         >
           {slidePhotos.map((photo, index) => (
-            <div key={index} className=" slide-photo w-[1920px] h-[807px]">
+            <div key={index} className=" slide-photo w-full h-[807px]">
               <img src={photo} alt={`Slide ${index + 1}`} />
             </div>
           ))}
         </div>
         <div className="absolute inset-0 bg-[#202020] opacity-[0.8]"></div>
-        <div className="main bg-opacity-75 py-20 relative z-10">
-          <div className="Text w-[406px] h-[59px] absolute top-[360px] left-[200px]">
-            <p className="text-[48px] leading-[58.51px] font-normal text-[#fff]">
-              {t("heroSectionText")}
-            </p>
+        <div className="main">
+          <div className="Text absolute pt-[360px] pl-[200px] pr-[1314px] pb-[388px]">
+            <div className=" w-[406px] h-[59px]">
+              <p className="text-[48px] leading-[58.51px] font-normal text-[#fff]">
+                {t("heroSectionText")}
+              </p>
+            </div>
           </div>
-          <div className="button absolute top-[659px] left-[200px]">
+          <div className="button absolute pt-[659px] pl-[200px] pb-20">
             <button className="bg-transparent border border-white text-white py-6 px-20 rounded-[40px] gap-6 items-center inline-flex">
               <span className="text-[16px] w-[61px] h-5 leading-[19.5px] font-light">
                 {t("heroSectionButtonText")}
               </span>
             </button>
           </div>
-          <div className="slide-left absolute top-[659px] left-[461px] w-[68px] h-[68px] shrink-0">
+          <div className="slide-left absolute pt-[659px] pl-[461px] pb-20  shrink-0">
             <img src={SlideLeft} alt="Arrow left" onClick={handlePrevSlide} />
           </div>
-          <div className="slide-right absolute top-[659px] left-[545px] w-[68px] h-[68px] shrink-0">
+          <div className="slide-right absolute pt-[659px] pl-[545px] pb-20 shrink-0">
             <img src={SlideRight} alt="Arrow right" onClick={handleNextSlide} />
           </div>
         </div>
       </div>
       {/* About */}
-      <div className="About text-[#202020] flex py-[120px] pl-20 pr-[99px]  flex-col justify-center items-start gap-16 shadow-custom w-[1520px] h-[723px]">
+      <div className="About text-[#202020] flex py-[120px] pl-20 pr-[99px]  flex-col justify-center items-start gap-16 shadow-custom w-[1520px] h-[723px] md:w-[1120px] md:pt-20 md:pl-20 md:pr-20 md:pb-[70px]">
         <div className="AboutUs w-[292px] h-[59px]">
           <p className="text-[48px] font-normal leading-[58.51px]">
             {t("aboutUs")}
           </p>
         </div>
-        <div className="AboutUsText w-[1341px] h-[360px]">
-          <p className="text-[20px] font-light leading-9">{t("aboutUsText")}</p>
+        <div className="AboutUsText w-[1341px] h-[360px] md:w-[960px] md:h-[384px]">
+          <p className="text-[20px] font-light leading-9 md:text-[18px] md:leading-[32.4px]">
+            {t("aboutUsText")}
+          </p>
         </div>
       </div>
       {/* Advantages */}
-      <div className="Advantages w-[1520px] h-[681px] shadow-custom relative">
-        <div className="AdvantagesUs text-[#202020] w-[625px] h-[59px] absolute top-[120px] left-20">
+      <div className="Advantages w-[1520px] h-[681px] shadow-custom relative md:w-[1120px] md:h-[581px]  md:pr-10 md:gap-20">
+        <div className="AdvantagesUs text-[#202020] absolute pt-[120px] pl-20 md:pt-20">
           <p className="text-[48px] font-normal leading-[58.51px]">
             {t("advantagesUs")}
           </p>
         </div>
-        <div className="AdvantagesLayout w-[1256px] h-[282px] absolute left-[88px] top-[259px] gap-12">
-          <div className="Layout inline-flex items-start gap-12 z-0">
-            <div className="LayoutBox1 w-[400px] h-[282px] shrink-0 relative">
-              <img src={AdvantagesBgPhoto1} alt="Advantages Image 1" />
-              <div className="absolute inset-0 bg-[#202020] opacity-[0.8]"></div>
-              <span className="absolute top-10 left-[178px] w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff]">
-                1
-              </span>
-              <p className="absolute top-[162px] left-10 w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff]">
-                {t("advantagesText1")}
-              </p>
+        <div className="AdvantagesLayout w-[1256px] h-[282px] absolute pl-[88px] pt-[259px]">
+          <div className="Layout inline-flex items-start gap-12 z-0  md:gap-5">
+            <div className="LayoutBox1 box w-[400px] h-[282px] shrink-0 relative md:w-[320px] md:h-[282px]">
+              <div className="layerBg absolute inset-0 bg-[#202020] opacity-[0.8] shrink-0"></div>
+              <div className="absolute pt-10 pl-[178px] md:px-[136px] md:pb-6">
+                <span className="w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff]">
+                  1
+                </span>
+              </div>
+              <div className="absolute pt-[162px] px-10">
+                <p className="w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff]  md:w-[240px] md:h-20">
+                  {t("advantagesText1")}
+                </p>
+              </div>
+              <img
+                className="md:w-[320px] md:h-[282px]"
+                src={AdvantagesBgPhoto1}
+                alt="Advantages Image 1"
+              />
             </div>
-            <div className="LayoutBox2 w-[400px] h-[282px] shrink-0 relative">
-              <img src={AdvantagesBgPhoto2} alt="Advantages Image 2" />
+            <div className="LayoutBox2 box w-[400px] h-[282px] shrink-0 relative md:w-[320px] md:h-[282px]">
               <div className="absolute inset-0 bg-[#202020] opacity-[0.8]"></div>
-              <span className="absolute top-10 left-[178px] w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff]">
-                2
-              </span>
-              <p className="absolute top-[162px] left-10 w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff]">
-                {t("advantagesText2")}
-              </p>
+              <div className="absolute pt-10 pl-[178px] md:px-[136px] md:pb-6">
+                <span className="w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff]">
+                  2
+                </span>
+              </div>
+              <div className="absolute pt-[162px] pl-10 ">
+                <p className="w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff] md:w-[240px] md:h-20">
+                  {t("advantagesText2")}
+                </p>
+              </div>
+              <img
+                className="md:w-[320px] md:h-[282px]"
+                src={AdvantagesBgPhoto2}
+                alt="Advantages Image 2"
+              />
             </div>
-            <div className="LayoutBox3 w-[400px]  h-[282px] shrink-0 relative">
-              <img src={AdvantagesBgPhoto3} alt="Advantages Image 3" />
+            <div className="LayoutBox3 box w-[400px]  h-[282px] shrink-0 relative md:w-[320px] md:h-[282px]">
               <div className="absolute inset-0 bg-[#202020] opacity-[0.8]"></div>
-              <span className="absolute top-10 left-[178px] w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff]">
-                3
-              </span>
-              <p className="absolute top-[162px] left-10 w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff]">
-                {t("advantagesText3")}
-              </p>
+              <div className="absolute pt-10 pl-[178px] md:px-[136px] md:pb-6">
+                <span className="w-12 h-[96px] font-light text-[80px] leading-[97.52px] items-center text-[#fff] md:w-[240px] md:h-20">
+                  3
+                </span>
+              </div>
+              <div className="absolute pt-[162px] pl-10 ">
+                <p className="w-[320px] h-20 text-center text-[20px] font-light leading-[24.38px] text-[#fff] md:w-[240px] md:h-20">
+                  {t("advantagesText3")}
+                </p>
+              </div>
+              <img
+                className="md:w-[320px] md:h-[282px]"
+                src={AdvantagesBgPhoto3}
+                alt="Advantages Image 3"
+              />
             </div>
           </div>
         </div>

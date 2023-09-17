@@ -9,25 +9,35 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="Footer w-[1920px] h-[268px] inline-flex gap-[120px] bg-[#202020] text-[#fff] relative">
-      <div className="FooterContacts flex-col items-start inline-flex gap-6 w-[488px] h-[108px] absolute  left-[200px] top-20">
-        <div className="Phone inline-flex gap-6">
-          <p className="">{t("phone")}</p>
-          <p>+374 (94) - 00 - 77 - 07</p>
-        </div>
-        <div className="Address inline-flex gap-6">
-          <p>{t("address")}</p>
-          <p className="AddressText">{t("addressText")}</p>
-        </div>
-        <div className="EmailAddress inline-flex gap-6">
-          <p>{t("email")}</p>
-          <p>bellart_itd@mail.ru</p>
+    <div className="Footer w-[1920px] h-[268px] inline-flex gap-[120px] bg-[#202020] text-[#fff] relative md:w-[1520px]">
+      <div className="FooterContacts flex-col items-start inline-flex gap-6 w-[488px] h-[108px] absolute  pl-[200px] py-20">
+        <div className="contacts">
+          <div className="Phone inline-flex gap-6">
+            <p className="">{t("phone")}</p>
+            <div className="w-[177px]">
+              <p>+374 (94) - 00 - 77 - 07</p>
+            </div>
+          </div>
+          <div className="Address w-[488px] h-5 inline-flex gap-6">
+            <p>{t("address")}</p>
+            <div className="w-[377px]">
+              <p className="AddressText">{t("addressText")}</p>
+            </div>
+          </div>
+          <div className="EmailAddress inline-flex gap-6">
+            <p>{t("email")}</p>
+            <div className="w-[150px]">
+              <p>bellart_itd@mail.ru</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="SocialMedia w-[168px] h-[84px] absolute top-20 left-[888px] flex flex-col gap-6 shrink-0">
-        <p className="w-[117px] h-5 text-[16px] leading-[19.5px] font-light">
-          {t("socalNet")}
-        </p>
+      <div className="SocialMedia w-[168px] h-[84px] absolute pt-20 pl-[888px] flex flex-col gap-6 shrink-0 md:pl-[808px] md:pb-[104px]">
+        <div className="w-[117px] h-5 ">
+          <p className="text-[16px] leading-[19.5px] font-light">
+            {t("socalNet")}
+          </p>
+        </div>
         <div className="SocialMediaIcons inline-flex items-start gap-6">
           <div className="faceBook">
             <span className="w-10 h-10 py-[12px] flex justify-center items-center border rounded-[20px]">
@@ -46,12 +56,16 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="FooterLogo inline-flex items-center gap-6 w-[235px] h-20 absolute top-[94px] left-[1485px] ">
-        <p className="text-[16px] leading-[19.5px] font-light">
-          {t("footerLogoText")}
-        </p>
-        <div className="logo">
-          <img className="w-20 h-20" src={Logo} alt="" />
+      <div className="FooterLogo  w-[235px] h-20 ">
+        <div className="footerLogo inline-flex items-center absolute py-[94px] pl-[1485px] gap-6 md:pl-[1085px]">
+          <div className="footerLogoText">
+            <p className="text-[16px] leading-[19.5px] font-light w-[133px]">
+              {t("footerLogoText")}
+            </p>
+          </div>
+          <div className="logoFooter">
+            <img className="w-20 h-20" src={Logo} alt="" />
+          </div>
         </div>
       </div>
     </div>
