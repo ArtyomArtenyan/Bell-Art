@@ -12,6 +12,12 @@ export default {
       },
       screens: {
         md: { max: "1520px" },
+        lg: { max: "1120px" },
+        sr: { max: "640px" },
+        xg: { max: "390px" },
+      },
+      colors: {
+        secondaryColor: "#e5b727",
       },
     },
   },

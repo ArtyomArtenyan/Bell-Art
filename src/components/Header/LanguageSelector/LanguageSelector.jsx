@@ -12,8 +12,8 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="LanguageSelector absolute py-12 pl-[1656px] md:pl-[1256px]">
-      <div className="language w-16 h-6">
+    <div className="LanguageSelector w-16 h-6 m-auto lg:py-12">
+      <div className="language flex">
         <button
           className={`arm w-6 h-6 shrink-0 ${
             i18n.language === "arm" ? "hidden" : ""

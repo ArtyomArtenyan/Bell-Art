@@ -1,5 +1,7 @@
-import React from "react";
-import Logo from "../Pictures/logo/Logo_Photo.jpg";
+import React, { useState } from "react";
+import Logo from "../Pictures/logo/Logo_Photo.svg";
+import HamburgerMenu from "../Pictures/HamburgerMenu/Hamburger_Menu.svg";
+import CloseIcon from "../Pictures/HamburgerMenu/Vector 1.svg";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -7,25 +9,32 @@ import LanguageSelector from "./LanguageSelector/LanguageSelector.jsx";
 
 const Header = () => {
   const { t } = useTranslation();
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
+
+  const toggleWindow = () => {
+    setIsWindowOpen(!isWindowOpen);
+  };
+
   return (
-    <div className="header flex bg-#fff w-[1920px] h-[120px] shrink-0 shadow-[3sh] md:w-[1520px] md:h-[120px]">
-      <div className="logoContainer py-[18px] pl-[200px]">
-        <div className="LogoCon flex w-[84px] h-[84px] px-[10px] flex-col justify-center items-center gap-[5px] text-center">
-          <div className="logo">
-            <img src={Logo} alt="Logo" className="w-16 h-16 inline" />
-          </div>
-          <div className="logoText">
-            <p className="text-[#e5b727] text-[12px] leading-[14.63px] font-normal w-14 h-[15px] md:text-[12px]">
+    <div className="HeaderWrapper h-[120px] sr:h-[104px] xg:py-[6px] xg:h-16 sr:py-4 py-[18px]">
+      <header className="Header shadow-[custom] bg-white flex m-[0px_auto] w-[79.8vw] lg:items-center sr:items-center lg:justify-between sr:justify-between">
+        <div className="HeaderLogo  sr:pl-0">
+          <div className="Logo  flex px-[0.625rem]  flex-col justify-center items-center gap-[0.313rem] sr:gap-[3px]">
+            <NavLink to="/">
+              <img
+                className="w-16 h-16 sr:w-14 sr:h-14 xg:w-10 xg:h-10"
+                src={Logo}
+                alt=""
+              />
+            </NavLink>
+            <span className="text-[0.75rem] sr:text-[11px] xg:text-[7px] font-normal leading-normal text-secondaryColor">
               {t("logo")}
-            </p>
+            </span>
           </div>
         </div>
-      </div>
-
-      <div className="Navigation absolute pl-[549px]  py-12 md:pl-[373px]">
-        <nav className="nav  w-[823px] h-6">
-          <ul className="inline-flex  gap-20 items-start text-[20px] leading-[24.38px] font-light md:gap-16">
-            <li>
+        <nav className="HeaderMenu flex-auto m-auto  lg:hidden ">
+          <ul className="MenuList flex  justify-evenly">
+            <li className="MenuItem ">
               <NavLink
                 to="/"
                 className={({ isActive }) => (isActive ? "text-[#e5b727]" : "")}
@@ -33,7 +42,7 @@ const Header = () => {
                 {t("home")}
               </NavLink>
             </li>
-            <li>
+            <li className="MenuItem">
               <NavLink
                 to="/product"
                 className={({ isActive }) => (isActive ? "text-[#e5b727]" : "")}
@@ -41,7 +50,7 @@ const Header = () => {
                 {t("product")}
               </NavLink>
             </li>
-            <li>
+            <li className="MenuItem">
               <NavLink
                 to="/services"
                 className={({ isActive }) => (isActive ? "text-[#e5b727]" : "")}
@@ -49,7 +58,7 @@ const Header = () => {
                 {t("services")}
               </NavLink>
             </li>
-            <li>
+            <li className="MenuItem ">
               <NavLink
                 to="/contact"
                 className={({ isActive }) => (isActive ? "text-[#e5b727]" : "")}
@@ -59,9 +68,92 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+        <div className="lg:hidden m-auto">
+          <LanguageSelector />
+        </div>
 
-      <LanguageSelector />
+        <div className="HamburgerMenu hidden lg:flex justify-end sr:block z-[9992]">
+          <button className="HamburgerMenuContainer  w-8 h-4">
+            <img
+              onClick={toggleWindow}
+              src={HamburgerMenu}
+              alt="HamburgerMenu"
+            />
+          </button>
+        </div>
+
+        {isWindowOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50"
+            onClick={toggleWindow}
+          ></div>
+        )}
+
+        <div
+          className={`fixed top-0 right-0 h-full w-[373px] sr:w-[333px] xg:w-[390px] z-[9999]  bg-white p-4 transition-transform ${
+            isWindowOpen
+              ? "transform translate-x-0"
+              : "transform translate-x-full"
+          }`}
+        >
+          <div className="topPart">
+            <div className="flex justify-start pt-[52px] pl-10 absolute">
+              <button onClick={toggleWindow} className="text-black">
+                <img className="w-4 h-4" src={CloseIcon} alt="" />
+              </button>
+            </div>
+            <div className="MediaLanguages pl-[189px] sr:pl-[149px] xg:pl-[302px]">
+              <LanguageSelector />
+            </div>
+          </div>
+          <div className="bottomPart">
+            <nav className="HeaderMenu relative">
+              <ul className="MenuList absolute pl-10 pt-[92px] flex flex-col text-[18px]">
+                <li className="MenuItem ">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#e5b727]" : ""
+                    }
+                  >
+                    {t("home")}
+                  </NavLink>
+                </li>
+                <li className="MenuItem  mt-16">
+                  <NavLink
+                    to="/product"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#e5b727]" : ""
+                    }
+                  >
+                    {t("product")}
+                  </NavLink>
+                </li>
+                <li className="MenuItem  mt-16">
+                  <NavLink
+                    to="/services"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#e5b727]" : ""
+                    }
+                  >
+                    {t("services")}
+                  </NavLink>
+                </li>
+                <li className="MenuItem  mt-16">
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) =>
+                      isActive ? "text-[#e5b727]" : ""
+                    }
+                  >
+                    {t("contact")}
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
     </div>
   );
 };

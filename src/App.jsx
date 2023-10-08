@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="font-montserrat">
       <Header />
-      <div className="App  gap-[120px] inline-flex flex-col items-center">
+      <div className="App  flex flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
