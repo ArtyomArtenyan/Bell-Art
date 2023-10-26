@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="HeaderWrapper h-[120px] sr:h-[104px] xg:py-[6px] xg:h-16 sr:py-4 py-[18px]">
+    <div className="HeaderWrapper h-[120px] sr:h-[104px] xg:py-[6px] xg:h-16 sr:py-4 py-[18px] shadow-custom">
       <header className="Header shadow-[custom] bg-white flex m-[0px_auto] w-[79.8vw] lg:items-center sr:items-center lg:justify-between sr:justify-between">
         <div className="HeaderLogo  sr:pl-0">
           <div className="Logo  flex px-[0.625rem]  flex-col justify-center items-center gap-[0.313rem] sr:gap-[3px]">
@@ -90,7 +90,7 @@ const Header = () => {
         )}
 
         <div
-          className={`fixed top-0 right-0 h-full w-[373px] sr:w-[333px] xg:w-[390px] z-[9999]  bg-white p-4 transition-transform ${
+          className={`fixed top-0 right-0 h-full w-[373px] sr:w-[333px] xg:w-[390px] z-[990999]  bg-white p-4 transition-transform ${
             isWindowOpen
               ? "transform translate-x-0"
               : "transform translate-x-full"

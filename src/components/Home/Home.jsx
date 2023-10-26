@@ -52,7 +52,7 @@ const Home = () => {
             {slidePhotos.map((photo, index) => (
               <div
                 key={index}
-                className="slide-photo bg-cover w-full  h-full"
+                className="slide-photo bg-cover object-cover w-full  h-full"
                 style={{ backgroundImage: `url(${photo})` }}
               ></div>
             ))}
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="AboutSection flex justify-center flex-row  pt-[120px] pb-[120px]">
+      <div className="AboutSection flex justify-center flex-row  py-[120px] ">
         {/* About */}
         <div className="About text-[#202020] w-[79.1666666667vw] h-full flex py-[120px] pl-20 pr-[99px] flex-col justify-center items-start gap-16 shadow-custom md:pt-20 md:px-20 md:pb-[70px] lg:pb-20 lg:gap-10 lg:px-10 xg:py-10 xg:px-6">
           <div className="AboutUs ">

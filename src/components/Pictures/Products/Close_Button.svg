@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Close_Button">
+<rect width="32" height="32" rx="16" fill="#202020"/>
+<path id="Close" d="M12 12L16 16M20 20L16 16M16 16L20 12M16 16L12 20" stroke="white" stroke-linecap="round"/>
+</g>
+</svg>
